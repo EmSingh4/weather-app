@@ -1,0 +1,110 @@
+html {
+  height: 100%;
+}
+body {
+  background: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.city-heading,
+.current-temp,
+.day-date {
+  text-align: center;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+.units {
+  font-size: 12px;
+  vertical-align: super;
+}
+.link {
+  color: white;
+}
+.link:hover {
+  color: #c5b8cb;
+}
+.high-low {
+  text-align: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+.weather-desc {
+  text-align: center;
+  padding: 10px;
+  color: white;
+  padding-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  text-transform: capitalize;
+}
+.card-title {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+.card-text {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+.cloud-bolt {
+  font-size: 40px;
+  padding: 10px;
+  color: white;
+}
+.large-icon {
+  text-align: center;
+  font-size: 150px;
+  color: white;
+}
+.searchbox {
+  width: 50%;
+  padding: 30px 0px;
+  opacity: 0.9;
+}
+.go-button {
+  font-family: "Poppins", sans-serif;
+  width: 100px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
+  color: white;
+  transition: ease-in-out;
+  margin-right: 15px;
+  font-size: 16px;
+}
+.go-button:hover {
+  background: rgb(195, 183, 203, 0.5);
+}
+.current-button {
+  font-family: "Poppins", sans-serif;
+  width: 100px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
+  color: white;
+  transition: ease-in-out;
+  font-size: 16px;
+}
+.current-button:hover {
+  background: rgb(195, 183, 203, 0.5);
+}
+.footer {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-size: 11px;
+  text-align: center;
+  color: white;
+}
+.weather-cards {
+  background: none;
+  border: 1px solid white;
+  overflow: auto;
+  margin: 10px;
+}
+.weather-cards:hover {
+  background: rgb(195, 183, 203, 0.1);
+}

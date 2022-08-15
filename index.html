@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/8ca0cf39fa.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-3 searchbox">
+          <form class="d-flex" role="search" id="city-form">
+            <input
+              class="form-control me-2"
+              type="search"
+              id="city-input"
+              placeholder="Change the city..."
+              aria-label="Search"
+            />
+            <button class="go-button" id="go-button" type="submit">Search</button>
+              <button class="current-button" id="current-button" type="submit">Current</button>
+          </form>
+         
+        </div>
+      </div>
+      <h1 class="city-heading" id="city">Melbourne</h1>
+      <h5 class="day-date" id="day-date">Day Time</h5>
+      <p class="large-icon"><i class="bi bi-cloud-sun"></i></i></p>
+      <h2 class="current-temp" id="temperature">19°C </h2>
+      <p class="high-low"><span id="today-low">8°C</span> | <span id="today-high">19°C</span></p>
+      <p class="weather-desc" id="weather-desc">Sunny with some clouds</p>
+      <div
+        class="row card-block d-flex justify-content-center align-items-center"
+      >
+        <div class="col-sm text-center">
+          <div class="card weather-cards">
+            <div class="card-body">
+              <h5 class="card-title">Tomorrow</h5>
+              <i class="bi bi-cloud-lightning cloud-bolt"></i>
+              <p class="card-text">8°C | 18°C</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm text-center">
+          <div class="card weather-cards">
+            <div class="card-body">
+              <h5 class="card-title">Monday</h5>
+             <i class="bi bi-cloud-lightning cloud-bolt"></i>
+              <p class="card-text">8°C | 18°C</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm text-center">
+          <div class="card weather-cards">
+            <div class="card-body">
+              <h5 class="card-title">Tuesday</h5>
+             <i class="bi bi-cloud-lightning cloud-bolt"></i>
+              <p class="card-text">8°C | 18°C</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm text-center">
+          <div class="card weather-cards">
+            <div class="card-body">
+              <h5 class="card-title">Wednesday</h5>
+              <i class="bi bi-cloud-lightning cloud-bolt"></i>
+              <p class="card-text">8°C | 18°C</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm text-center card-columns">
+          <div class="card weather-cards">
+            <div class="card-body">
+              <h5 class="card-title">Thursday</h5>
+              <i class="bi bi-cloud-lightning cloud-bolt"></i>
+              <p class="card-text">8°C | 18°C</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <p class="footer">Coded by Emily Singh</p>
+    <script src="src/scripts.js">
+    </script>
+  </body>
+</html>

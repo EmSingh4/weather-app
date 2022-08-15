@@ -108,3 +108,7 @@ body {
 .weather-cards:hover {
   background: rgb(195, 183, 203, 0.1);
 }
+
+.code-link {
+  color: white;
+}

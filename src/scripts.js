@@ -34,14 +34,20 @@ function defaultTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let lowTemp = Math.round(response.data.main.temp_min);
   let highTemp = Math.round(response.data.main.temp_max);
+  let windSpeed = Math.round(response.data.wind.speed);
+  let humidity = response.data.main.humidity;
   let tempElement = document.querySelector("#temperature");
   let weatherdesc = document.querySelector("#weather-desc");
   let todayLow = document.querySelector("#today-low");
   let todayHigh = document.querySelector("#today-high");
+  let windElement = document.querySelector("#wind-speed");
+  let humidityElement = document.querySelector("#humidity");
   tempElement.innerHTML = `${temperature}°C`;
   weatherdesc.innerHTML = response.data.weather[0].description;
   todayLow.innerHTML = `${lowTemp}°C`;
   todayHigh.innerHTML = `${highTemp}°C`;
+  windElement.innerHTML = `${windSpeed}km/h`;
+  humidityElement.innerHTML = `${humidity}%`;
 }
 axios.get(apiUrl).then(defaultTemperature);
 
@@ -63,14 +69,20 @@ function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let lowTemp = Math.round(response.data.main.temp_min);
   let highTemp = Math.round(response.data.main.temp_max);
+  let windSpeed = Math.round(response.data.wind.speed);
+  let humidity = response.data.main.humidity;
   let tempElement = document.querySelector("#temperature");
   let weatherdesc = document.querySelector("#weather-desc");
   let todayLow = document.querySelector("#today-low");
   let todayHigh = document.querySelector("#today-high");
+  let windElement = document.querySelector("#wind-speed");
+  let humidityElement = document.querySelector("#humidity");
   tempElement.innerHTML = `${temperature}°C`;
   weatherdesc.innerHTML = response.data.weather[0].description;
   todayLow.innerHTML = `${lowTemp}°C`;
   todayHigh.innerHTML = `${highTemp}°C`;
+  windElement.innerHTML = `${windSpeed}km/h`;
+  humidityElement.innerHTML = `${humidity}%`;
 }
 
 function showCurrentLocationTemp(response) {
@@ -78,14 +90,20 @@ function showCurrentLocationTemp(response) {
   let currentLocation = response.data.name;
   let lowTemp = Math.round(response.data.main.temp_min);
   let highTemp = Math.round(response.data.main.temp_max);
+  let windSpeed = Math.round(response.data.wind.speed);
+  let humidity = response.data.main.humidity;
   let displayCity = document.querySelector("#city");
   let tempElement = document.querySelector("#temperature");
   let todayLow = document.querySelector("#today-low");
   let todayHigh = document.querySelector("#today-high");
+  let windElement = document.querySelector("#wind-speed");
+  let humidityElement = document.querySelector("#humidity");
   displayCity.innerHTML = `${currentLocation}`;
   tempElement.innerHTML = `${currentTemp}°C`;
   todayLow.innerHTML = `${lowTemp}°C`;
   todayHigh.innerHTML = `${highTemp}°C`;
+  windElement.innerHTML = `${windSpeed}km/h`;
+  humidityElement.innerHTML = `${humidity}%`;
 }
 
 function currentLocation(position) {

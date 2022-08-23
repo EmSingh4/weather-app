@@ -17,6 +17,7 @@ body {
 .units {
   font-size: 12px;
   vertical-align: super;
+  padding-left: 10px;
 }
 .link {
   color: white;

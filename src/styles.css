@@ -32,12 +32,12 @@ body {
 }
 .weather-desc {
   text-align: center;
-  padding: 10px;
+  padding-top: 10px;
   color: white;
-  padding-bottom: 5px;
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   text-transform: capitalize;
+  padding-bottom: 5px;
 }
 .card-title {
   font-size: 16px;
@@ -54,10 +54,9 @@ body {
   padding: 10px;
   color: white;
 }
-.large-icon {
-  text-align: center;
-  font-size: 150px;
-  color: white;
+.main-icon {
+  display: block;
+  margin: 0 auto;
 }
 .searchbox {
   width: 50%;

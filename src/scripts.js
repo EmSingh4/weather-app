@@ -32,22 +32,22 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?id=2158177&appid=$
 
 function defaultTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
-  let lowTemp = Math.round(response.data.main.temp_min);
-  let highTemp = Math.round(response.data.main.temp_max);
   let windSpeed = Math.round(response.data.wind.speed);
   let humidity = response.data.main.humidity;
   let tempElement = document.querySelector("#temperature");
   let weatherdesc = document.querySelector("#weather-desc");
-  let todayLow = document.querySelector("#today-low");
-  let todayHigh = document.querySelector("#today-high");
   let windElement = document.querySelector("#wind-speed");
   let humidityElement = document.querySelector("#humidity");
+  let mainIconElement = document.querySelector("#main-icon");
   tempElement.innerHTML = `${temperature}°C`;
   weatherdesc.innerHTML = response.data.weather[0].description;
-  todayLow.innerHTML = `${lowTemp}°C`;
-  todayHigh.innerHTML = `${highTemp}°C`;
   windElement.innerHTML = `${windSpeed}km/h`;
   humidityElement.innerHTML = `${humidity}%`;
+  mainIconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  mainIconElement.setAttribute("alt", response.data.weather[0].description);
 }
 axios.get(apiUrl).then(defaultTemperature);
 
@@ -67,43 +67,43 @@ search.addEventListener("submit", searchCity);
 
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
-  let lowTemp = Math.round(response.data.main.temp_min);
-  let highTemp = Math.round(response.data.main.temp_max);
   let windSpeed = Math.round(response.data.wind.speed);
   let humidity = response.data.main.humidity;
   let tempElement = document.querySelector("#temperature");
   let weatherdesc = document.querySelector("#weather-desc");
-  let todayLow = document.querySelector("#today-low");
-  let todayHigh = document.querySelector("#today-high");
   let windElement = document.querySelector("#wind-speed");
   let humidityElement = document.querySelector("#humidity");
+  let mainIconElement = document.querySelector("#main-icon");
   tempElement.innerHTML = `${temperature}°C`;
   weatherdesc.innerHTML = response.data.weather[0].description;
-  todayLow.innerHTML = `${lowTemp}°C`;
-  todayHigh.innerHTML = `${highTemp}°C`;
   windElement.innerHTML = `${windSpeed}km/h`;
   humidityElement.innerHTML = `${humidity}%`;
+  mainIconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  mainIconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function showCurrentLocationTemp(response) {
   let currentTemp = Math.round(response.data.main.temp);
   let currentLocation = response.data.name;
-  let lowTemp = Math.round(response.data.main.temp_min);
-  let highTemp = Math.round(response.data.main.temp_max);
   let windSpeed = Math.round(response.data.wind.speed);
   let humidity = response.data.main.humidity;
   let displayCity = document.querySelector("#city");
   let tempElement = document.querySelector("#temperature");
-  let todayLow = document.querySelector("#today-low");
-  let todayHigh = document.querySelector("#today-high");
   let windElement = document.querySelector("#wind-speed");
   let humidityElement = document.querySelector("#humidity");
+  let mainIconElement = document.querySelector("#main-icon");
   displayCity.innerHTML = `${currentLocation}`;
   tempElement.innerHTML = `${currentTemp}°C`;
-  todayLow.innerHTML = `${lowTemp}°C`;
-  todayHigh.innerHTML = `${highTemp}°C`;
   windElement.innerHTML = `${windSpeed}km/h`;
   humidityElement.innerHTML = `${humidity}%`;
+  mainIconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  mainIconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function currentLocation(position) {

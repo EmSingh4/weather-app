@@ -33,7 +33,7 @@ body {
   text-align: center;
   padding: 10px;
   color: white;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   text-transform: capitalize;
@@ -111,4 +111,13 @@ body {
 
 .code-link {
   color: white;
+}
+.wind-speed,
+.humitidty {
+  text-align: center;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-size: 12px;
+  padding-bottom: 20px;
 }

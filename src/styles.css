@@ -14,17 +14,24 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
 }
+.day-date {
+  position: relative;
+  bottom: 5px;
+}
+.temperature {
+  font-size: 50px;
+}
 .units {
   font-size: 12px;
-  vertical-align: super;
-  padding-left: 10px;
+  color: white;
+  text-align: center;
+  position: relative;
+  bottom: 18px;
 }
 .link {
   color: white;
 }
-.link:hover {
-  color: #c5b8cb;
-}
+
 .high-low {
   text-align: center;
   color: white;
@@ -119,5 +126,13 @@ body {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
   font-size: 12px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
+}
+.units .active {
+  text-decoration: none;
+  cursor: default;
+}
+
+.units .active:hover {
+  color: white;
 }

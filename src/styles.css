@@ -13,6 +13,7 @@ body {
   color: #ffffff;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  text-transform: capitalize;
 }
 .day-date {
   position: relative;

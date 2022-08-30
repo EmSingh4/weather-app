@@ -150,3 +150,35 @@ let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click", showCelsius);
 
 let celsiusTemperature = null;
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div
+        class="row card-block d-flex justify-content-center align-items-center"
+      >`;
+  let days = [
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday",
+    "Monday",
+  ];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col-2 text-center">
+          <div class="card weather-cards">
+            <div class="card-body">
+              <h5 class="card-title forecast-day">${day}</h5>
+              <img src="http://openweathermap.org/img/wn/50d@2x.png" class="forecast-icon"/>
+              <p class="card-text"><span class="forecast-max">8°C</span> | <span class="forecast-min">18°C</span></p>
+            </div>
+          </div>
+    </div>`;
+    forecastElement.innerHTML = forecastHTML + `</div>`;
+  });
+}
+
+displayForecast();

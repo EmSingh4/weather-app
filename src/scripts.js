@@ -168,7 +168,7 @@ function displayForecast() {
     forecastHTML =
       forecastHTML +
       `
-        <div class="col-2 text-center">
+        <div class="col-sm text-center">
           <div class="card weather-cards">
             <div class="card-body">
               <h5 class="card-title forecast-day">${day}</h5>

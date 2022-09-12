@@ -65,6 +65,7 @@ body {
 .main-icon {
   display: block;
   margin: 0 auto;
+  margin-top: 50px;
 }
 .searchbox {
   width: 50%;
@@ -136,4 +137,7 @@ body {
 
 .units .active:hover {
   color: white;
+}
+.weather-forecast {
+  margin-top: 80px;
 }

@@ -29,6 +29,21 @@ dateElement.innerHTML = formatDate(currentTime);
 let apiKey = "ea9f14208e3310b361d14a1f519c90a9";
 let units = "metric";
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+
 getDefaultTemp();
 
 function getDefaultTemp() {
@@ -117,38 +132,40 @@ celsius.addEventListener("click", showCelsius);
 
 let celsiusTemperature = null;
 
+function getForecast(coordinates) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div
         class="row card-block d-flex justify-content-center align-items-center"
       >`;
-  let days = [
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-    "Monday",
-  ];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
         <div class="col-sm text-center">
           <div class="card weather-cards">
             <div class="card-body">
-              <h5 class="card-title forecast-day">${day}</h5>
-              <img src="http://openweathermap.org/img/wn/50d@2x.png" class="forecast-icon"/>
-              <p class="card-text"><span class="forecast-max">8°C</span> | <span class="forecast-min">18°C</span></p>
+              <h5 class="card-title forecast-day">${formatDay(
+                forecastDay.dt
+              )}</h5>
+              <img src="http://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" class="forecast-icon"/>
+              <p class="card-text"><span class="forecast-max">${Math.round(
+                forecastDay.temp.max
+              )}°C</span> | <span class="forecast-min">${Math.round(
+          forecastDay.temp.min
+        )}°C</span></p>
             </div>
           </div>
     </div>`;
+    }
     forecastElement.innerHTML = forecastHTML + `</div>`;
   });
-}
-
-function getForecast(coordinates) {
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
 }
